@@ -1,4 +1,4 @@
-function [T04] = T04(q1, q2, q3, q4); 
+function [T04] = T04(q); 
   %Setup 
     LINK1 = 50;
     LINK2 = 93;
@@ -13,8 +13,8 @@ function [T04] = T04(q1, q2, q3, q4);
 
     %T01
     %q1 = rotation around z-axis in radians, 
-    Rz1 = [cos(q1) -sin(q1) 0 0; 
-        sin(q1) cos(q1) 0 0; 
+    Rz1 = [cos(q(1)) -sin(q(1)) 0 0; 
+        sin(q(1)) cos(q(1)) 0 0; 
         0 0 1 0
         0 0 0 1]; %Rotation around z-axis by q2 angle
 
@@ -33,8 +33,8 @@ function [T04] = T04(q1, q2, q3, q4);
     %T12
     %q2 = rotation around z-axis in radians.
     
-    Rz2 = [cos(q2+pi/2) -sin(q2+pi/2) 0 0; 
-        sin(q2+pi/2) cos(q2+pi/2) 0 0; 
+    Rz2 = [cos(q(2)+pi/2) -sin(q(2)+pi/2) 0 0; 
+        sin(q(2)+pi/2) cos(q(2)+pi/2) 0 0; 
         0 0 1 0
         0 0 0 1]; %Rotation around z-axis by q2 angle plus an additional pi/s to allign x-axis
 
@@ -48,8 +48,8 @@ function [T04] = T04(q1, q2, q3, q4);
     %T23
     %q3 = rotation around z-axis in radians.
 
-    Rz3 = [cos(q3) -sin(q3) 0 0; 
-        sin(q3) cos(q3) 0 0; 
+    Rz3 = [cos(q(3)) -sin(q(3)) 0 0; 
+        sin(q(3)) cos(q(3)) 0 0; 
         0 0 1 0
         0 0 0 1]; %Rotation around z-axis by theta1 angle
 
@@ -64,8 +64,8 @@ function [T04] = T04(q1, q2, q3, q4);
     %T34
     %q4 = rotation around z-axis in radians.
 
-    Rz4 = [cos(q4) -sin(q4) 0 0; 
-        sin(q4) cos(q4) 0 0; 
+    Rz4 = [cos(q(4)) -sin(q(4)) 0 0; 
+        sin(q(4)) cos(q(4)) 0 0; 
         0 0 1 0
         0 0 0 1]; %Rotation around z-axis by theta1 angle
 

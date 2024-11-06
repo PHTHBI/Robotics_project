@@ -1,4 +1,4 @@
-function [q4] = get_q4(q2,q3,o03)
+function [q4] = get_q4(q2, q3, x04)
     LINK1 = 50;
     LINK2 = 93;
     LINK3 = LINK2;
@@ -9,9 +9,7 @@ function [q4] = get_q4(q2,q3,o03)
     LINK5 = sqrt(CAMERA_X^2 + CAMERA_Y^2); % from o3 to camera
     CAMERA_STYLUS_ANGLE = atan(9/7);
 
-    x03 = o03(1);
-    y03 = o03(2);
-    z03 = o03(3);
-    
-    q4 = asin(z03) - q2 -q3
+    z03 = x04(3);
+
+    q4 = asin(z03) - q2 - q3;  
 end
